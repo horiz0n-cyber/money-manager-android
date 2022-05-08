@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="340dp"
-        android:layout_height="450dp"
+        android:layout_height="296dp"
         android:layout_marginStart="46dp"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="46dp"
@@ -19,42 +20,20 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/danhMuc"
+            android:id="@+id/matkhaucu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="15dp"
+            android:drawableLeft="@drawable/ic_user_solid"
+            android:drawablePadding="5dp"
             android:fontFamily="@font/nunito_sans"
-            android:text="Danh mục"
-            android:textColor="#6667AB"
-            android:textSize="18dp" />
-
-        <Spinner
-            android:id="@+id/edit_spiner_category"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/edittext_border_grey"
-            android:ems="10"
-            android:inputType="textPersonName"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
-        <TextView
-            android:id="@+id/soTien"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="15dp"
-            android:fontFamily="@font/nunito_sans"
-            android:text="Số Tiền "
+            android:text="Họ và tên"
             android:textColor="#6667AB"
             android:textSize="18dp" />
 
         <EditText
-            android:id="@+id/edit_money"
+            android:id="@+id/edit_old_pass"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginLeft="20dp"
@@ -63,22 +42,27 @@
             android:layout_marginBottom="8dp"
             android:background="@drawable/edittext_border_grey"
             android:ems="10"
+            android:fontFamily="@font/nunito_sans"
             android:inputType="textPersonName"
-            tools:ignore="SpeakableTextPresentCheck" />
+            android:padding="5dp"
+            android:text="Nguyễn Thái Dương"
+            android:textColor="#6667AB" />
 
         <TextView
-            android:id="@+id/ngay"
+            android:id="@+id/matkhaumoi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="15dp"
+            android:drawableLeft="@drawable/ic_phone_solid"
+            android:drawablePadding="5dp"
             android:fontFamily="@font/nunito_sans"
-            android:text="Ngày"
+            android:text="Số điện thoại"
             android:textColor="#6667AB"
             android:textSize="18dp" />
 
         <EditText
-            android:id="@+id/edit_date"
+            android:id="@+id/edit_new_pass"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginLeft="20dp"
@@ -87,31 +71,40 @@
             android:layout_marginBottom="8dp"
             android:background="@drawable/edittext_border_grey"
             android:ems="10"
+            android:fontFamily="@font/nunito_sans"
+            android:inputType="textPersonName"
+            android:padding="5dp"
+            android:text="03xxxxxx96"
+            android:textColor="#6667AB" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:drawableLeft="@drawable/ic_calendar_solid"
+            android:drawablePadding="5dp"
+            android:fontFamily="@font/nunito_sans"
+            android:text="Ngày sinh"
+            android:textColor="#6667AB"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/edit_re_new_pass"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/edittext_border_grey"
+            android:ems="10"
+            android:fontFamily="@font/nunito_sans"
             android:inputType="date"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <TextView
-            android:id="@+id/ghiChu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="15dp"
-            android:fontFamily="@font/nunito_sans"
-            android:text="Ngày"
-            android:textColor="#6667AB"
-            android:textSize="18dp" />
-
-        <EditText
-            android:id="@+id/edit_note"
-            android:layout_width="match_parent"
-            android:layout_height="97dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/edittext_border_grey"
-            android:ems="10"
-            tools:ignore="SpeakableTextPresentCheck" />
+            android:padding="5dp"
+            android:text="27/08/2000"
+            android:textColor="#6667AB" />
     </LinearLayout>
 
     <Button
@@ -123,7 +116,7 @@
         android:layout_marginEnd="46dp"
         android:background="@drawable/btn_bg"
         android:fontFamily="@font/nunito_sans"
-        android:text="LƯU NHẮC NHỞ"
+        android:text="LƯU THÔNG TIN"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="13dp"
@@ -140,8 +133,9 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="46dp"
         android:background="@drawable/btn_bg_border"
+        android:editable="false"
         android:fontFamily="@font/nunito_sans"
-        android:text="QUAY LẠI"
+        android:text="ĐỔI MẬT KHẨU"
         android:textAllCaps="false"
         android:textColor="#6667AB"
         android:textSize="13dp"
@@ -149,4 +143,5 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/save_pass" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

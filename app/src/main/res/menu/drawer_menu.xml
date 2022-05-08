@@ -12,29 +12,22 @@
             android:icon="@drawable/ic_newspaper_solid"
             android:title="Nhắc nhở" />
         <item
-            android:id="@+id/nav_tracking"
+            android:id="@+id/nav_income"
             android:icon="@drawable/ic_chart_pie_solid"
-            android:title="Theo dõi thu - chi" />
+            android:title="Theo dõi thu" />
         <item
-            android:id="@+id/nav_setting"
-            android:icon="@drawable/ic_gear_solid"
-            android:title="Cài đặt" />
-        <item
-            android:id="@+id/nav_logout"
-            android:icon="@drawable/ic_right_from_bracket_solid"
-            android:title="Đăng xuất" />
+            android:id="@+id/nav_expense"
+            android:icon="@drawable/ic_chart_pie_solid"
+            android:title="Theo dõi chi" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Goodbye">
         <menu>
             <item
                 android:id="@+id/nav_share"
-                android:icon="@drawable/ic_calendar_solid"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_edit_pen"
-                android:title="Send" />
+                android:icon="@drawable/ic_right_from_bracket_solid"
+                android:title="Đăng xuất" />
+
         </menu>
     </item>
 </menu>

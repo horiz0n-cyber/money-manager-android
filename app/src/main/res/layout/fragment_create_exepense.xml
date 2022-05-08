@@ -115,7 +115,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnSaveCreate"
+        android:id="@+id/save_pass"
         android:layout_width="340dp"
         android:layout_height="48dp"
         android:layout_marginStart="46dp"
@@ -133,7 +133,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/change_pass"
         android:layout_width="340dp"
         android:layout_height="48dp"
         android:layout_marginStart="46dp"
@@ -148,5 +148,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSaveCreate" />
+        app:layout_constraintTop_toBottomOf="@+id/save_pass" />
 </androidx.constraintlayout.widget.ConstraintLayout>

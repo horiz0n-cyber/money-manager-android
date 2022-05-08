@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:id="@+id/ie_row_id">
+
+    <LinearLayout
+        android:layout_width="329dp"
+        android:layout_height="66dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/edittext_border_grey"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/ex_img_category"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="#6667AB"
+            app:srcCompat="@drawable/ic_utensils_solid" />
+
+        <TextView
+            android:id="@+id/ex_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+            android:fontFamily="@font/nunito_sans"
+            android:text="ĂN UỐNG"
+            android:textColor="#6667AB"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/ex_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/nunito_sans"
+            android:gravity="end|center"
+            android:text="2.000.000"
+            android:textColor="#6667AB"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</RelativeLayout>
