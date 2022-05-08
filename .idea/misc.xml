@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/drawable/btn_bg.xml" value="0.2115" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/drawable/btn_bg_border.xml" value="0.2115" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/drawable/btn_bg_delete.xml" value="0.158" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/drawable/edittext_border_grey.xml" value="0.1605" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/drawable/ic_bitcoin_brands.xml" value="0.123" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/drawable/ic_briefcase_solid.xml" value="0.123" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/drawable/ic_calendar_solid.xml" value="0.2115" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/drawable/ic_cart_shopping_solid__1_.xml" value="0.2115" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/drawable/ic_file_invoice_solid.xml" value="0.2115" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/drawable/ic_gamepad_solid.xml" value="0.2115" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/drawable/ic_gas_pump_solid.xml" value="0.2115" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/drawable/ic_heart_solid.xml" value="0.2115" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/drawable/ic_key_solid.xml" value="0.2115" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/drawable/ic_phone_solid.xml" value="0.126" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/drawable/ic_piggy_bank_save_svgrepo_com.xml" value="0.2115" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/drawable/ic_user_solid.xml" value="0.2115" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/drawable/ic_utensils_solid.xml" value="0.19" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/drawable/pink_out_line.xml" value="0.1" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/drawable/text_bg.xml" value="0.2115" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/drawable/toggle_widget_background.xml" value="0.1" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/layout/activity_profile.xml" value="0.33" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/layout/activity_reminder.xml" value="0.1" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/layout/activity_reminder1.xml" value="0.12681159420289856" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/layout/activity_tracking.xml" value="0.14628623188405798" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/layout/activity_update.xml" value="0.1" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/layout/content_main.xml" value="0.16802536231884058" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/layout/fragmen_reminder.xml" value="0.18" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/layout/fragment_common.xml" value="0.16" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/layout/fragment_create_exepense.xml" value="0.33" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/layout/fragment_create_exepense1.xml" value="0.25" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/layout/fragment_create_expense.xml" value="0.1814814814814815" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/layout/fragment_create_income.xml" value="0.1814814814814815" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/layout/fragment_create_reminder.xml" value="0.18" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/layout/fragment_expense.xml" value="0.16" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/layout/fragment_income.xml" value="0.14" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/layout/fragment_reminder.xml" value="0.18" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/layout/fragment_tracking.xml" value="0.1" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/layout/fragment_update_reminder.xml" value="0.22" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/layout/ie_row.xml" value="0.18" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/layout/login.xml" value="0.22" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/layout/nav_header.xml" value="0.25" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/layout/register.xml" value="0.22" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/layout/reminder.xml" value="0.12" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/layout/reminder_row.xml" value="0.25" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/menu/drawer_menu.xml" value="0.2" />
+        <entry key="..\:/AndroidSt/Project07/app/src/main/res/menu/navigation_menu.xml" value="0.2" />
+        <entry key="..\:/Users/danh2/AndroidStudioProjects/projectandroid07-master/app/src/main/res/layout/activity_login.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/danh2/AndroidStudioProjects/projectandroid07-master/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/danh2/AndroidStudioProjects/projectandroid07-master/app/src/main/res/layout/activity_profile.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/danh2/AndroidStudioProjects/projectandroid07-master/app/src/main/res/layout/activity_register.xml" value="0.21" />
+        <entry key="..\:/Users/danh2/AndroidStudioProjects/projectandroid07-master/app/src/main/res/layout/fragment_create_exepense.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/danh2/AndroidStudioProjects/projectandroid07-master/app/src/main/res/layout/fragment_create_reminder.xml" value="0.1359375" />
+        <entry key="..\:/Users/danh2/AndroidStudioProjects/projectandroid07-master/app/src/main/res/layout/fragment_income.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/danh2/AndroidStudioProjects/projectandroid07-master/app/src/main/res/layout/fragment_reminder.xml" value="0.1" />
+        <entry key="..\:/Users/danh2/AndroidStudioProjects/projectandroid07-master/app/src/main/res/layout/fragment_tracking.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/danh2/AndroidStudioProjects/projectandroid07-master/app/src/main/res/layout/fragment_update_reminder.xml" value="0.1" />
+        <entry key="..\:/Users/danh2/AndroidStudioProjects/projectandroid07-master/app/src/main/res/layout/nav_header.xml" value="0.1390625" />
+        <entry key="..\:/Users/danh2/AndroidStudioProjects/projectandroid07-master/app/src/main/res/layout/reminder.xml" value="0.1359375" />
+        <entry key="..\:/Users/danh2/AndroidStudioProjects/projectandroid07-master/app/src/main/res/layout/reminder_row.xml" value="0.1359375" />
+        <entry key="..\:/Users/danh2/AndroidStudioProjects/projectandroid07-master/app/src/main/res/menu/drawer_menu.xml" value="0.20416666666666666" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_user_solid"
+            android:title="Thông tin cá nhân" />
+        <item
+            android:id="@+id/nav_reminder"
+            android:icon="@drawable/ic_newspaper_solid"
+            android:title="Nhắc nhở" />
+        <item
+            android:id="@+id/nav_tracking"
+            android:icon="@drawable/ic_chart_pie_solid"
+            android:title="Theo dõi thu - chi" />
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@drawable/ic_gear_solid"
+            android:title="Cài đặt" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_right_from_bracket_solid"
+            android:title="Đăng xuất" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_calendar_solid"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_edit_pen"
+                android:title="Send" />
+        </menu>
+    </item>
+</menu>
