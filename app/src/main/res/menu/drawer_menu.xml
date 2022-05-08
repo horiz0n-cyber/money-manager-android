@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_user_solid"
+            android:title="Thông tin cá nhân" />
+        <item
+            android:id="@+id/nav_reminder"
+            android:icon="@drawable/ic_newspaper_solid"
+            android:title="Nhắc nhở" />
+        <item
+            android:id="@+id/nav_income"
+            android:icon="@drawable/ic_chart_pie_solid"
+            android:title="Theo dõi thu" />
+        <item
+            android:id="@+id/nav_expense"
+            android:icon="@drawable/ic_chart_pie_solid"
+            android:title="Theo dõi chi" />
+    </group>
+
+    <item android:title="Goodbye">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_right_from_bracket_solid"
+                android:title="Đăng xuất" />
+
+        </menu>
+    </item>
+</menu>
