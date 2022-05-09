@@ -1,20 +1,32 @@
 package com.example.project07.income;
 
 import android.os.Bundle;
+import android.telecom.ConnectionService;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.example.project07.R;
+import com.example.project07.model.AccModel;
+import com.example.project07.model.IncomeModel;
 
 public class UpdateIncomeFragment extends Fragment {
+
+    private int incomeID;
+    private int ID;
+    private TextView editIncomeMoney;
+    private TextView editIncomeDate;
+    private TextView editIncomeNote;
+
     public UpdateIncomeFragment() {
     }
 
@@ -22,6 +34,13 @@ public class UpdateIncomeFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_update_income, container, false);
+        Bundle bundle = this.getArguments();
+        if(bundle != null){
+            incomeID = bundle.getInt("incomeID");
+            ID = bundle.getInt("AccID");
+        }
+        IncomeModel incomeModel = new IncomeModel();
+        IncomeClass incomeClass = incomeModel.getIncomeByInID(incomeID, v.getContext());
 
         //Spinner
         String[] exCategory =getResources().getStringArray(R.array.listIncome);
@@ -31,9 +50,46 @@ public class UpdateIncomeFragment extends Fragment {
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
+        //text
+        editIncomeMoney = v.findViewById(R.id.edit_income_money);
+        editIncomeDate = v.findViewById(R.id.edit_income_date);
+        editIncomeNote = v.findViewById(R.id.edit_income_note);
+
         //Button save
         Button btn_save = v.findViewById(R.id.btnedit_income_save);
         Button btn_delete = v.findViewById(R.id.delete_income);
+
+        spinner.setSelection(incomeClass.getCate_id()-1);
+        editIncomeMoney.setText(incomeClass.getMoney());
+        editIncomeDate.setText(incomeClass.getDate());
+        editIncomeNote.setText(incomeClass.getNote());
+
+        btn_save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                IncomeClass incomeClass1 = new IncomeClass(incomeID, editIncomeMoney.getText().toString(),
+                        spinner.getSelectedItemPosition() + 1, editIncomeNote.getText().toString(),
+                        editIncomeDate.getText().toString());
+                incomeModel.updateIncome(incomeClass1, v.getContext());
+
+                IncomeFragment incomeFragment = new IncomeFragment(ID);
+                AppCompatActivity activity = (AppCompatActivity) view.getContext();
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        incomeFragment).addToBackStack(null).commit();
+            }
+        });
+
+        btn_delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                incomeModel.delete(incomeClass.getIn_id(), v.getContext());
+
+                IncomeFragment incomeFragment = new IncomeFragment(ID);
+                AppCompatActivity activity = (AppCompatActivity) view.getContext();
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        incomeFragment).addToBackStack(null).commit();
+            }
+        });
 
         return v;
     }

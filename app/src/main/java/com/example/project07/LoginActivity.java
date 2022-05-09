@@ -12,6 +12,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.project07.model.AccModel;
+import com.example.project07.model.ExpenseModel;
+import com.example.project07.model.IncomeModel;
 
 public class LoginActivity extends AppCompatActivity {
 

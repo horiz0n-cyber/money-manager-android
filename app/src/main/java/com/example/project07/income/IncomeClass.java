@@ -9,6 +9,15 @@ public class IncomeClass {
     private String date;
     private int AccId;
 
+    public IncomeClass(int in_id, String money, int cate_id, String note, String date, int accId) {
+        this.in_id = in_id;
+        this.money = money;
+        this.cate_id = cate_id;
+        this.note = note;
+        this.date = date;
+        AccId = accId;
+    }
+
     public IncomeClass(String money, int cate_id, String note, String date, int accId) {
         this.money = money;
         this.cate_id = cate_id;
@@ -17,17 +26,15 @@ public class IncomeClass {
         AccId = accId;
     }
 
-    public IncomeClass( String money, int cate_id, String note, String date) {
+    public IncomeClass(int in_id, String money, int cate_id, String note, String date) {
+        this.in_id = in_id;
         this.money = money;
         this.cate_id = cate_id;
         this.note = note;
         this.date = date;
     }
 
-    public IncomeClass(int in_id, String money, String date) {
-        this.money = money;
-        this.in_id = in_id;
-        this.date = date;
+    public IncomeClass() {
     }
 
     public int getIn_id() {
@@ -76,5 +83,17 @@ public class IncomeClass {
 
     public void setAccId(int accId) {
         AccId = accId;
+    }
+
+    @Override
+    public String toString() {
+        return "IncomeClass{" +
+                "in_id=" + in_id +
+                ", money='" + money + '\'' +
+                ", cate_id=" + cate_id +
+                ", note='" + note + '\'' +
+                ", date='" + date + '\'' +
+                ", AccId=" + AccId +
+                '}';
     }
 }

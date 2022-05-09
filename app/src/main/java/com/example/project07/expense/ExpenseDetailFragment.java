@@ -82,9 +82,12 @@ public class ExpenseDetailFragment extends Fragment implements IEDetailRecyclerV
     @Override
     public void onIEDetailClick(int position) {
         //Toast.makeText(getContext(),"âsasasasas",Toast.LENGTH_SHORT).show();
-
+        IncomeExpenseDetail incomeExpenseDetail = listExpenseDetail.get(position);
+        Bundle bundle = new Bundle();
+        bundle.putInt("expenseID", incomeExpenseDetail.getIeID());
+        bundle.putInt("AccID", ID);
         UpdateExpenseFragment updateExpenseFragment = new UpdateExpenseFragment();
-
+        updateExpenseFragment.setArguments(bundle);
         FragmentTransaction manager = getActivity().getSupportFragmentManager().beginTransaction();
         manager.replace(R.id.fragment_container,
                 updateExpenseFragment).addToBackStack(null).commit();

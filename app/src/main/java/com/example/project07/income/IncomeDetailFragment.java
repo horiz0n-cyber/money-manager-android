@@ -81,10 +81,12 @@ public class IncomeDetailFragment extends Fragment implements IEDetailRecyclerVi
 
     @Override
     public void onIEDetailClick(int position) {
-        //Toast.makeText(getContext(),"ABC",Toast.LENGTH_SHORT).show();
-
+        IncomeExpenseDetail incomeExpenseDetail = listIncomeDetail.get(position);
+        Bundle bundle = new Bundle();
+        bundle.putInt("incomeID", incomeExpenseDetail.getIeID());
+        bundle.putInt("AccID", ID);
         UpdateIncomeFragment updateIncomeFragment = new UpdateIncomeFragment();
-
+        updateIncomeFragment.setArguments(bundle);
         FragmentTransaction manager = getActivity().getSupportFragmentManager().beginTransaction();
         manager.replace(R.id.fragment_container,
                 updateIncomeFragment).addToBackStack(null).commit();

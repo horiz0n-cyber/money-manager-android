@@ -60,7 +60,9 @@ public class AddIncomeFragment extends Fragment {
 //                else if (remind_date.getText().toString().equals(""))
 //                    Toast.makeText(getContext(), "date", Toast.LENGTH_LONG).show();
                 else {
-                    IncomeClass incomeClass = new IncomeClass(incomeMoney.getText().toString(),spinner.getSelectedItemPosition() + 1, incomeNote.getText().toString(), incomeDate.getText().toString(), ID);
+                    IncomeClass incomeClass = new IncomeClass(incomeMoney.getText().toString(),
+                            spinner.getSelectedItemPosition() + 1, incomeNote.getText().toString(),
+                            incomeDate.getText().toString(), ID);
                     IncomeModel inComeModel = new IncomeModel();
                     inComeModel.addIncome(incomeClass, v.getContext());
                     Toast.makeText(getContext(), "saved", Toast.LENGTH_LONG).show();

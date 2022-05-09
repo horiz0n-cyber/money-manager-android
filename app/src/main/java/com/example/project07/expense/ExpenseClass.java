@@ -17,6 +17,17 @@ public class ExpenseClass {
         AccId = accId;
     }
 
+    public ExpenseClass(int out_id, String money, int cate_id, String note, String date) {
+        this.out_id = out_id;
+        this.money = money;
+        this.cate_id = cate_id;
+        this.note = note;
+        this.date = date;
+    }
+
+    public ExpenseClass() {
+    }
+
     public ExpenseClass(int out_id, String money, String date) {
         this.money = money;
         this.out_id = out_id;
@@ -69,5 +80,17 @@ public class ExpenseClass {
 
     public void setAccId(int accId) {
         AccId = accId;
+    }
+
+    @Override
+    public String toString() {
+        return "ExpenseClass{" +
+                "out_id=" + out_id +
+                ", money='" + money + '\'' +
+                ", cate_id=" + cate_id +
+                ", note='" + note + '\'' +
+                ", date='" + date + '\'' +
+                ", AccId=" + AccId +
+                '}';
     }
 }
