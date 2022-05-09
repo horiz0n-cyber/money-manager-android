@@ -12,11 +12,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.project07.R;
 import com.example.project07.income.IncomeClass;
+import com.example.project07.income.UpdateIncomeFragment;
 import com.example.project07.model.ExpenseModel;
 import com.example.project07.tracking.IEDetailRecyclerViewAdapter;
 import com.example.project07.tracking.IncomeExpenseDetail;
@@ -79,6 +81,12 @@ public class ExpenseDetailFragment extends Fragment implements IEDetailRecyclerV
 
     @Override
     public void onIEDetailClick(int position) {
-        Toast.makeText(getContext(),"âsasasasas",Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getContext(),"âsasasasas",Toast.LENGTH_SHORT).show();
+
+        UpdateExpenseFragment updateExpenseFragment = new UpdateExpenseFragment();
+
+        FragmentTransaction manager = getActivity().getSupportFragmentManager().beginTransaction();
+        manager.replace(R.id.fragment_container,
+                updateExpenseFragment).addToBackStack(null).commit();
     }
 }

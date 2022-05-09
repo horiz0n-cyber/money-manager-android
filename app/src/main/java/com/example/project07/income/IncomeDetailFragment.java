@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -80,6 +81,12 @@ public class IncomeDetailFragment extends Fragment implements IEDetailRecyclerVi
 
     @Override
     public void onIEDetailClick(int position) {
-        Toast.makeText(getContext(),"ABC",Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getContext(),"ABC",Toast.LENGTH_SHORT).show();
+
+        UpdateIncomeFragment updateIncomeFragment = new UpdateIncomeFragment();
+
+        FragmentTransaction manager = getActivity().getSupportFragmentManager().beginTransaction();
+        manager.replace(R.id.fragment_container,
+                updateIncomeFragment).addToBackStack(null).commit();
     }
 }

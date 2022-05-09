@@ -40,6 +40,7 @@
             android:background="@drawable/edittext_border_grey"
             android:ems="10"
             android:inputType="textPersonName"
+            android:padding="5dp"
             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
         <TextView
@@ -64,6 +65,8 @@
             android:background="@drawable/edittext_border_grey"
             android:ems="10"
             android:inputType="textPersonName"
+            android:padding="5dp"
+            android:textColor="#6667AB"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
@@ -88,6 +91,8 @@
             android:background="@drawable/edittext_border_grey"
             android:ems="10"
             android:inputType="date"
+            android:padding="5dp"
+            android:textColor="#6667AB"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
@@ -111,6 +116,8 @@
             android:layout_marginBottom="8dp"
             android:background="@drawable/edittext_border_grey"
             android:ems="10"
+            android:padding="5dp"
+            android:textColor="#6667AB"
             tools:ignore="SpeakableTextPresentCheck" />
     </LinearLayout>
 

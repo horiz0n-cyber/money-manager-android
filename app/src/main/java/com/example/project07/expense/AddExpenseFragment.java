@@ -35,8 +35,8 @@ public class AddExpenseFragment extends Fragment {
         String[] exCategory = getResources().getStringArray(R.array.listExpense);
         Spinner spinner = (Spinner) v.findViewById(R.id.add_expense_spiner_category);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),
-                android.R.layout.simple_spinner_dropdown_item, exCategory);
-        adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
+                R.layout.spinner_item, exCategory);
+        adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
         Bundle bundle = this.getArguments();
