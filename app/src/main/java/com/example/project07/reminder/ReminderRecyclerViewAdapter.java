@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.project07.R;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,6 +52,8 @@ public class ReminderRecyclerViewAdapter extends RecyclerView.Adapter<ReminderRe
                 String date = vHolder.tv_date.getText().toString();
                 int NOTE_ID = vHolder.NOTI_ID;
 
+                money = ReplaceSymbols(money);
+
                 Bundle bundle = new Bundle();
                 bundle.putString("title", title);
                 bundle.putString("money",money);
@@ -72,8 +75,9 @@ public class ReminderRecyclerViewAdapter extends RecyclerView.Adapter<ReminderRe
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder1 holder, int position) {
+        DecimalFormat formatter = new DecimalFormat("###,###,###");
         holder.tv_title.setText(mData.get(position).getNote());
-        holder.tv_money.setText(mData.get(position).getMoney());
+        holder.tv_money.setText(formatter.format(Double.parseDouble(mData.get(position).getMoney())));
         holder.tv_date.setText(mData.get(position).getDate());
         holder.NOTI_ID = mData.get(position).getNoti_id();
     }
@@ -101,5 +105,14 @@ public class ReminderRecyclerViewAdapter extends RecyclerView.Adapter<ReminderRe
             tv_date = (TextView) itemView.findViewById(R.id.reminder_date);
 
         }
+    }
+
+    public String ReplaceSymbols(String str){
+        String[] arr = str.split(",");
+        String money = "";
+        for ( int i=0; i< arr.length; i++){
+            money += arr[i];
+        }
+        return money;
     }
 }

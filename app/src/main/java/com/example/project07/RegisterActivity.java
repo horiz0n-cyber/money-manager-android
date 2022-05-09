@@ -1,5 +1,8 @@
 package com.example.project07;
 
+
+import static com.example.project07.nhom4.ProcPass.HashPass;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -49,7 +52,7 @@ public class RegisterActivity extends AppCompatActivity {
                     if(ac.  checkPhone(regPhone.getText().toString(), RegisterActivity.this))
                         Toast.makeText(RegisterActivity.this, "Tai khoan da ton tai", Toast.LENGTH_LONG).show();
                     else {
-                        ac.addAcc(regName.getText().toString(), regPhone.getText().toString(), regPass1.getText().toString(), regDate.getText().toString(), RegisterActivity.this);
+                        ac.addAcc(regName.getText().toString(), regPhone.getText().toString(), HashPass(regPass1.getText().toString()), regDate.getText().toString(), RegisterActivity.this);
                         Toast.makeText(RegisterActivity.this, "Dang ki thanh cong", Toast.LENGTH_LONG).show();
                         regName.setText("");
                         regPhone.setText("");

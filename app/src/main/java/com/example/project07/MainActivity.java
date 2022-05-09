@@ -11,8 +11,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.project07.expense.ExpenseFragment;
+import com.example.project07.income.IncomeFragment;
+import com.example.project07.profile.ProfileFragment;
 import com.example.project07.reminder.ReminderFragment;
-import com.example.project07.tracking.TrackingFragment;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -49,13 +51,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
+            case R.id.nav_profile:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new ProfileFragment(ID)).commit();
+                break;
             case R.id.nav_reminder:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new ReminderFragment(ID)).commit();
                 break;
-            case R.id.nav_tracking:
+            case R.id.nav_income:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new TrackingFragment()).commit();
+                        new IncomeFragment(ID)).commit();
+                break;
+            case R.id.nav_expense:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new ExpenseFragment(ID)).commit();
                 break;
             case  R.id.nav_logout:
                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);

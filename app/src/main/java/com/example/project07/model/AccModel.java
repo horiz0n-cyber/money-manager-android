@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.project07.database.DbHandler;
+import com.example.project07.nhom4.AccClass;
 
 import java.util.ArrayList;
 
@@ -32,6 +33,7 @@ public class AccModel {
         String sql = "SELECT * FROM account";
 
         Cursor cs = db.rawQuery(sql, null);
+        cs.moveToFirst();
         return cs;
     }
 
@@ -86,5 +88,48 @@ public class AccModel {
         int id = cs.getInt(0);
         cs.close();
         return id;
+    }
+
+    public AccClass getProfile(int ID, Context context){
+        AccClass accClass = new AccClass();
+
+        Cursor cs = getAccData(context);
+        cs.moveToFirst();
+        while(!cs.isAfterLast()){
+            if(ID == cs.getInt(0)){
+                accClass.setName(cs.getString(1));
+                accClass.setPhone(cs.getString(2));
+//                accClass.setPasswd(cs.getString(3));
+                accClass.setDate(cs.getString(4));
+                break;
+            }
+            cs.moveToNext();
+        }
+        return accClass;
+    }
+
+    public void updateProfile(int ID, String name, String dob, Context context){
+        DbHandler dh = new DbHandler(context);
+        SQLiteDatabase db = dh.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        String dk = "acc_id = '"+ID+"'";
+        values.put(dh.KEY_NAME, name);
+        values.put(dh.KEY_DATE, dob);
+        db.update(dh.TB_ACC,values,dk, null);
+        db.close();
+        dh.close();
+    }
+
+    public void updatePass(String phone, String pass, Context context){
+        DbHandler dh = new DbHandler(context);
+        SQLiteDatabase db = dh.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        String dk = "phone = '"+phone+"'";
+        values.put(dh.KEY_PASSWD, pass);
+        db.update(dh.TB_ACC,values,dk, null);
+        db.close();
+        dh.close();
     }
 }

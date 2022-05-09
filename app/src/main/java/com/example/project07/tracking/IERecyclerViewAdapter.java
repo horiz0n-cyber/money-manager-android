@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.project07.R;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 public class IERecyclerViewAdapter extends RecyclerView.Adapter<IERecyclerViewAdapter.MyViewHolder> {
@@ -40,8 +40,10 @@ public class IERecyclerViewAdapter extends RecyclerView.Adapter<IERecyclerViewAd
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        DecimalFormat formatter = new DecimalFormat("###,###,###");
+
         holder.tv_category.setText(mData.get(position).getCategory());
-        holder.tv_money.setText(mData.get(position).getMoney());
+        holder.tv_money.setText(formatter.format(Double.parseDouble(mData.get(position).getMoney())));
         holder.img.setImageResource(mData.get(position).getPhoto());
     }
 
@@ -76,5 +78,14 @@ public class IERecyclerViewAdapter extends RecyclerView.Adapter<IERecyclerViewAd
 
     public interface OnIEListener{
         void onIEClick(int position);
+    }
+
+    public String ReplaceSymbols(String str){
+        String[] arr = str.split(",");
+        String money = "";
+        for ( int i=0; i< arr.length; i++){
+            money += arr[i];
+        }
+        return money;
     }
 }

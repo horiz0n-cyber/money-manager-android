@@ -102,7 +102,6 @@ public class CreateReminderFragment extends Fragment {
                     remind_date.setText("");
 
                     ReminderFragment reminderFragment = new ReminderFragment(ID);
-                    reminderFragment.setArguments(bundle);
 
                     AppCompatActivity activity = (AppCompatActivity) view.getContext();
                     activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,

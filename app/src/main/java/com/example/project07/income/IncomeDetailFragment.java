@@ -16,17 +16,20 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.project07.R;
+import com.example.project07.model.IncomeModel;
 import com.example.project07.tracking.IEDetailRecyclerViewAdapter;
 import com.example.project07.tracking.IncomeExpenseDetail;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class IncomeDetailFragment extends Fragment implements IEDetailRecyclerViewAdapter.OnIEDetailListener {
 
     View v;
     private RecyclerView myRecyclerView;
-    private List<IncomeExpenseDetail> listIncomeDetail;
+    private ArrayList<IncomeExpenseDetail> listIncomeDetail;
+    private int ID;
+    private int cate_id;
+    private String cateTitle;
     public IncomeDetailFragment() {
     }
 
@@ -34,6 +37,9 @@ public class IncomeDetailFragment extends Fragment implements IEDetailRecyclerVi
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.fragment_income_detail, container, false);
+
+        IncomeModel inComeModel = new IncomeModel();
+        listIncomeDetail = inComeModel.getListIncomeDetail(ID, cate_id, v.getContext());
 
         //button add income
         Button addBtn = (Button) v.findViewById(R.id.add_income);
@@ -49,10 +55,9 @@ public class IncomeDetailFragment extends Fragment implements IEDetailRecyclerVi
 
         TextView tv_Category = v.findViewById(R.id.detail_category);
         //get arguments
-        Bundle bundle = this.getArguments();
-        if(bundle != null){
-            tv_Category.setText(bundle.getString("category").toString());
-        }
+
+        tv_Category.setText(cateTitle);
+
         //RecyclerView of fragment income detail
         myRecyclerView = (RecyclerView) v.findViewById(R.id.list_income_detail);
         IEDetailRecyclerViewAdapter ieDetailRecyclerViewAdapter = new IEDetailRecyclerViewAdapter(getContext(),listIncomeDetail, this);
@@ -64,10 +69,13 @@ public class IncomeDetailFragment extends Fragment implements IEDetailRecyclerVi
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //bind data for recycler view
-        listIncomeDetail = new ArrayList<>();
-        listIncomeDetail.add(new IncomeExpenseDetail("200000","20-11-2022"));
-        listIncomeDetail.add(new IncomeExpenseDetail("222000","12-10-2022"));
+        //get data
+        Bundle bundle = this.getArguments();
+        if(bundle != null){
+            cateTitle = bundle.getString("category");
+            ID = bundle.getInt("AccID");
+            cate_id = bundle.getInt("Cate_id");
+        }
     }
 
     @Override

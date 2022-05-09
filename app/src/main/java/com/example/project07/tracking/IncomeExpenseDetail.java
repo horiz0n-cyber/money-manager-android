@@ -2,6 +2,7 @@ package com.example.project07.tracking;
 
 public class IncomeExpenseDetail {
 
+    private int ieID;
     private String money;
     private String date;
 
@@ -9,9 +10,18 @@ public class IncomeExpenseDetail {
 
     }
 
-    public IncomeExpenseDetail(String money, String date) {
+    public IncomeExpenseDetail(int ieID, String money, String date) {
+        this.ieID = ieID;
         this.money = money;
         this.date = date;
+    }
+
+    public int getIeID() {
+        return ieID;
+    }
+
+    public void setIeID(int ieID) {
+        this.ieID = ieID;
     }
 
     public String getMoney() {

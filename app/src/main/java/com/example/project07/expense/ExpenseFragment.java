@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.project07.R;
 import com.example.project07.income.AddIncomeFragment;
+import com.example.project07.model.ExpenseModel;
 import com.example.project07.tracking.IERecyclerViewAdapter;
 import com.example.project07.tracking.IncomeExpense;
 import com.example.project07.income.IncomeDetailFragment;
@@ -28,9 +29,10 @@ public class ExpenseFragment extends Fragment implements IERecyclerViewAdapter.O
     View v;
     private RecyclerView myRecyclerView;
     private List<IncomeExpense> listExpense;
+    private int ID;
 
-    public ExpenseFragment() {
-
+    public ExpenseFragment(int ID) {
+        this.ID = ID;
     }
 
     @Nullable
@@ -38,6 +40,13 @@ public class ExpenseFragment extends Fragment implements IERecyclerViewAdapter.O
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.fragment_expense, container, false);
 
+        ExpenseModel expenseModel = new ExpenseModel();
+        String[] arr = getResources().getStringArray(R.array.listExpense);
+        int[] arrImg = {R.drawable.ic_utensils_solid, R.drawable.ic_heart_solid, R.drawable.ic_file_invoice_solid, R.drawable.ic_gas_pump_solid, R.drawable.ic_cart_shopping_solid__1_, R.drawable.ic_gamepad_solid};
+        listExpense = new ArrayList<>();
+        for (int i=0; i< arr.length; i++){
+            listExpense.add(new IncomeExpense(arr[i], expenseModel.getAdvByCate(ID,i+1,v.getContext()), arrImg[i]));
+        }
         //button add income
         Button addExpense = (Button) v.findViewById(R.id.add_expense);
         addExpense.setOnClickListener(new View.OnClickListener() {
@@ -62,13 +71,6 @@ public class ExpenseFragment extends Fragment implements IERecyclerViewAdapter.O
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        listExpense = new ArrayList<>();
-        listExpense.add(new IncomeExpense("ĂN UỐNG", "2.000.000", R.drawable.ic_utensils_solid));
-        listExpense.add(new IncomeExpense("SỨC KHOẺ", "2.000.000", R.drawable.ic_heart_solid));
-        listExpense.add(new IncomeExpense("HOÁ ĐƠN", "2.000.000", R.drawable.ic_file_invoice_solid));
-        listExpense.add(new IncomeExpense("XĂNG XE", "2.000.000", R.drawable.ic_gas_pump_solid));
-        listExpense.add(new IncomeExpense("MUA SẮM", "2.000.000", R.drawable.ic_cart_shopping_solid__1_));
-        listExpense.add(new IncomeExpense("KHÁC", "2.000.000", R.drawable.ic_gamepad_solid));
     }
 
     @Override
@@ -78,6 +80,8 @@ public class ExpenseFragment extends Fragment implements IERecyclerViewAdapter.O
         String title = listExpense.get(position).getCategory();
         Bundle bundle = new Bundle();
         bundle.putString("category", title);
+        bundle.putInt("AccID", ID);
+        bundle.putInt("Cate_id", position+1);
 
         ExpenseDetailFragment expenseDetailFragment = new ExpenseDetailFragment();
         expenseDetailFragment.setArguments(bundle);

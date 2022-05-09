@@ -12,20 +12,25 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.project07.R;
+import com.example.project07.expense.ExpenseClass;
+import com.example.project07.income.IncomeClass;
 
+import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 public class IEDetailRecyclerViewAdapter extends RecyclerView.Adapter<IEDetailRecyclerViewAdapter.MyViewHolder2> {
 
     private Context mContext;
-    private List<IncomeExpenseDetail> mData;
+    private ArrayList<IncomeExpenseDetail> mData;
     private OnIEDetailListener mOnIEDetailListener;
 
-    public IEDetailRecyclerViewAdapter(Context mContext, List<IncomeExpenseDetail> mData, OnIEDetailListener mOnIEDetailListener) {
+    public IEDetailRecyclerViewAdapter(Context mContext, ArrayList<IncomeExpenseDetail> mData, OnIEDetailListener mOnIEDetailListener) {
         this.mContext = mContext;
         this.mData = mData;
         this.mOnIEDetailListener = mOnIEDetailListener;
     }
+
 
     @NonNull
     @Override
@@ -39,7 +44,8 @@ public class IEDetailRecyclerViewAdapter extends RecyclerView.Adapter<IEDetailRe
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder2 holder, int position) {
-        holder.ie_money_detail.setText(mData.get(position).getMoney());
+        DecimalFormat formatter = new DecimalFormat("###,###,###");
+        holder.ie_money_detail.setText(formatter.format(Double.parseDouble(mData.get(position).getMoney())));
         holder.ie_date_detail.setText(mData.get(position).getDate());
     }
 

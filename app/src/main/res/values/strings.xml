@@ -14,4 +14,18 @@
     <string name="menu_slideshow">Slideshow</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="listIncome">
+        <item>Công việc</item>
+        <item>Khác</item>
+    </string-array>
+
+    <string-array name="listExpense">
+        <item>Ăn Uống</item>
+        <item>Sức Khỏe</item>
+        <item>Hóa Đơn</item>
+        <item>Xăng Xe</item>
+        <item>Mua Sắm</item>
+        <item>Khác</item>
+    </string-array>
 </resources>

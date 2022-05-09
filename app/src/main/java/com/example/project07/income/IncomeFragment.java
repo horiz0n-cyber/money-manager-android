@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.project07.R;
+import com.example.project07.model.IncomeModel;
 import com.example.project07.tracking.IERecyclerViewAdapter;
 import com.example.project07.tracking.IncomeExpense;
 
@@ -26,8 +27,10 @@ public class IncomeFragment extends Fragment implements IERecyclerViewAdapter.On
     View v;
     private RecyclerView myRecyclerView;
     private List<IncomeExpense> listIncome;
+    private int ID;
 
-    public IncomeFragment() {
+    public IncomeFragment(int ID) {
+        this.ID = ID;
     }
 
     @Nullable
@@ -35,12 +38,25 @@ public class IncomeFragment extends Fragment implements IERecyclerViewAdapter.On
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         v = inflater.inflate(R.layout.fragment_income, container, false);
+
+        IncomeModel inComeModel = new IncomeModel();
+        //bind data for recycler view
+        String[] arr = getResources().getStringArray(R.array.listIncome);
+        int[] arrImg = {R.drawable.ic_briefcase_solid, R.drawable.ic_bitcoin_brands};
+        listIncome = new ArrayList<>();
+        for (int i=0; i< arr.length; i++){
+            listIncome.add(new IncomeExpense(arr[i], inComeModel.getAdvByCate(ID,i+1,v.getContext()), arrImg[i]));
+        }
+
         //button add income
         Button addBtn = (Button) v.findViewById(R.id.add_income);
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 AddIncomeFragment addIncomeFragment = new AddIncomeFragment();
+                Bundle bundle = new Bundle();
+                bundle.putInt("AccID", ID);
+                addIncomeFragment.setArguments(bundle);
                 FragmentManager manager = getActivity().getSupportFragmentManager();
                 manager.beginTransaction().replace(R.id.fragment_container, addIncomeFragment,
                         addIncomeFragment.getTag()).addToBackStack(null).commit();
@@ -60,10 +76,7 @@ public class IncomeFragment extends Fragment implements IERecyclerViewAdapter.On
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //bind data for recycler view
-        listIncome = new ArrayList<>();
-        listIncome.add(new IncomeExpense("CÔNG VIỆC", "20.000.000", R.drawable.ic_briefcase_solid));
-        listIncome.add(new IncomeExpense("THU NHẬP KHÁC", "2.000.000", R.drawable.ic_bitcoin_brands));
+
     }
 
     @Override
@@ -74,6 +87,8 @@ public class IncomeFragment extends Fragment implements IERecyclerViewAdapter.On
         String title = listIncome.get(position).getCategory();
         Bundle bundle = new Bundle();
         bundle.putString("category", title);
+        bundle.putInt("AccID", ID);
+        bundle.putInt("Cate_id", position+1);
 
         IncomeDetailFragment incomeDetailFragment = new IncomeDetailFragment();
         incomeDetailFragment.setArguments(bundle);

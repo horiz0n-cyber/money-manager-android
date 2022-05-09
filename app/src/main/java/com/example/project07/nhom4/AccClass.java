@@ -1,7 +1,7 @@
 package com.example.project07.nhom4;
 
 public class AccClass {
-    private int id;
+//    private int id;
     private String name;
     private String phone;
     private String passwd;
@@ -11,20 +11,11 @@ public class AccClass {
         super();
     }
 
-    public AccClass(int id, String name, String phone, String passwd, String date) {
-        this.id = id;
+    public AccClass( String name, String phone, String passwd, String date) {
         this.name = name;
         this.phone = phone;
         this.passwd = passwd;
         this.date = date;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -62,11 +53,21 @@ public class AccClass {
     @Override
     public String toString() {
         return "TaiKhoan{" +
-                "id=" + id +
                 ", name='" + name + '\'' +
                 ", phone='" + phone + '\'' +
                 ", passwd='" + passwd + '\'' +
                 ", date='" + date + '\'' +
                 '}';
+    }
+
+    public String convertPhone (String phone){
+        String strFirst = "";
+        for(int i=0; i<phone.length(); i++){
+            if(i<2 || i>phone.length()-3){
+                strFirst += phone.charAt(i);
+            } else
+                strFirst += "x";
+        }
+        return strFirst;
     }
 }

@@ -33,7 +33,7 @@
             android:textSize="18dp" />
 
         <EditText
-            android:id="@+id/edit_old_pass"
+            android:id="@+id/edit_name"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginLeft="20dp"
@@ -61,8 +61,8 @@
             android:textColor="#6667AB"
             android:textSize="18dp" />
 
-        <EditText
-            android:id="@+id/edit_new_pass"
+        <TextView
+            android:id="@+id/edit_phone"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginLeft="20dp"
@@ -72,10 +72,10 @@
             android:background="@drawable/edittext_border_grey"
             android:ems="10"
             android:fontFamily="@font/nunito_sans"
-            android:inputType="textPersonName"
             android:padding="5dp"
             android:text="03xxxxxx96"
-            android:textColor="#6667AB" />
+            android:textColor="#6667AB"
+            android:textSize="19sp" />
 
         <TextView
             android:id="@+id/textView9"
@@ -91,7 +91,7 @@
             android:textSize="18dp" />
 
         <EditText
-            android:id="@+id/edit_re_new_pass"
+            android:id="@+id/edit_dob"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginLeft="20dp"
@@ -108,7 +108,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/save_pass"
+        android:id="@+id/btn_save_profile"
         android:layout_width="340dp"
         android:layout_height="48dp"
         android:layout_marginStart="46dp"
@@ -126,7 +126,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <Button
-        android:id="@+id/change_pass"
+        android:id="@+id/btnchange_pass"
         android:layout_width="340dp"
         android:layout_height="48dp"
         android:layout_marginStart="46dp"
@@ -142,6 +142,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/save_pass" />
+        app:layout_constraintTop_toBottomOf="@+id/btnadd_income_save" />
 
 </LinearLayout>

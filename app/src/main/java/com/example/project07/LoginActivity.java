@@ -1,5 +1,7 @@
 package com.example.project07;
 
+import static com.example.project07.nhom4.ProcPass.HashPass;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -38,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
                 else {
                     AccModel accModel = new AccModel();
                     System.out.println("do????");
-                    if(accModel.checkPass(phone.getText().toString(),passwd.getText().toString(), LoginActivity.this)){
+                    if(accModel.checkPass(phone.getText().toString(),HashPass(passwd.getText().toString()), LoginActivity.this)){
                         Toast.makeText(LoginActivity.this, "Dang nhap thanh cong", Toast.LENGTH_LONG).show();
                         int ID = accModel.getAccID(phone.getText().toString(), LoginActivity.this);
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
