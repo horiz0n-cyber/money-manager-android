@@ -1,10 +1,12 @@
 package com.example.project07.profile;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +24,9 @@ import com.example.project07.reminder.CreateReminderFragment;
 import com.example.project07.reminder.ReminderFragment;
 import com.example.project07.reminder.ReminderRecyclerViewAdapter;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class ProfileFragment extends Fragment {
 
     View v;
@@ -31,6 +36,8 @@ public class ProfileFragment extends Fragment {
     private TextView profilePhone;
     private TextView profileDob;
     private Button btnSaveProfile;
+    final Calendar myCalendar= Calendar.getInstance();
+
     AccClass accClass = new AccClass();
 
     public ProfileFragment(int ID) {
@@ -47,6 +54,25 @@ public class ProfileFragment extends Fragment {
         profileName = v.findViewById(R.id.edit_name);
         profilePhone = v.findViewById(R.id.edit_phone);
         profileDob = v.findViewById(R.id.edit_dob);
+
+        DatePickerDialog.OnDateSetListener date =new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int day) {
+                myCalendar.set(Calendar.YEAR, year);
+                myCalendar.set(Calendar.MONTH,month);
+                myCalendar.set(Calendar.DAY_OF_MONTH,day);
+                updateLabel();
+            }
+        };
+        profileDob.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new DatePickerDialog(getContext(),date,myCalendar.get(Calendar.YEAR),
+                        myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+
+
         btnSaveProfile = v.findViewById(R.id.btn_save_profile);
 
 
@@ -93,5 +119,11 @@ public class ProfileFragment extends Fragment {
         });
 
         return v;
+    }
+
+    private void updateLabel(){
+        String myFormat="dd-MM-yyyy";
+        SimpleDateFormat dateFormat=new SimpleDateFormat(myFormat);
+        profileDob.setText(dateFormat.format(myCalendar.getTime()));
     }
 }

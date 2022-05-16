@@ -166,6 +166,10 @@
 
     <EditText
         android:id="@+id/regDate"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
         android:layout_width="315dp"
         android:layout_height="48dp"
         android:layout_marginStart="48dp"

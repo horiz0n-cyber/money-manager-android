@@ -1,5 +1,6 @@
 package com.example.project07.reminder;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,62 +10,27 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.project07.R;
 import com.example.project07.model.RemindModel;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link CreateReminderFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class CreateReminderFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
     private TextView remind_note;
     private TextView remind_money;
     private TextView remind_date;
     private Button btnSaveRemind;
     private int ID;
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    final Calendar myCalendar= Calendar.getInstance();
 
     public CreateReminderFragment() {
         // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment CreateReminderFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static CreateReminderFragment newInstance(String param1, String param2) {
-        CreateReminderFragment fragment = new CreateReminderFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
@@ -81,6 +47,24 @@ public class CreateReminderFragment extends Fragment {
         remind_note = rootView.findViewById(R.id.remindCreateNote);
         remind_money = rootView.findViewById(R.id.remindCreateMoney);
         remind_date = rootView.findViewById(R.id.remindCreateDate);
+
+        DatePickerDialog.OnDateSetListener date =new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int day) {
+                myCalendar.set(Calendar.YEAR, year);
+                myCalendar.set(Calendar.MONTH,month);
+                myCalendar.set(Calendar.DAY_OF_MONTH,day);
+                updateLabel();
+            }
+        };
+        remind_date.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new DatePickerDialog(getContext(),date,myCalendar.get(Calendar.YEAR),
+                        myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+
         btnSaveRemind = (Button) rootView.findViewById(R.id.btnSaveCreate);
 
         btnSaveRemind.setOnClickListener(new View.OnClickListener() {
@@ -113,6 +97,12 @@ public class CreateReminderFragment extends Fragment {
 
         // Inflate the layout for this fragment
         return rootView;
+    }
+
+    private void updateLabel(){
+        String myFormat="dd-MM-yyyy";
+        SimpleDateFormat dateFormat=new SimpleDateFormat(myFormat);
+        remind_date.setText(dateFormat.format(myCalendar.getTime()));
     }
 
 }

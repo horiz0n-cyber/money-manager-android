@@ -18,8 +18,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.project07.R;
 
+import java.text.DateFormat;
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class ReminderRecyclerViewAdapter extends RecyclerView.Adapter<ReminderRecyclerViewAdapter.MyViewHolder1> {
@@ -42,6 +45,12 @@ public class ReminderRecyclerViewAdapter extends RecyclerView.Adapter<ReminderRe
         v = LayoutInflater.from(mContext).inflate(R.layout.reminder_row,parent,false);
         MyViewHolder1 vHolder = new MyViewHolder1(v);
 
+//        DateFormat df = new SimpleDateFormat("dd MMM yyyy");
+//        String date = df.format(Calendar.getInstance().getTime());
+//
+//        if(vHolder.tv_date.getText().toString() == date){
+//
+//        }
         vHolder.reminder_row.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

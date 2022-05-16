@@ -1,10 +1,12 @@
 package com.example.project07.reminder;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,9 +15,14 @@ import androidx.fragment.app.Fragment;
 import com.example.project07.R;
 import com.example.project07.model.RemindModel;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class UpdateReminderFragment extends Fragment {
     private int NOTE_ID = 0;
     private int ID;
+    private EditText eDate;
+    final Calendar myCalendar= Calendar.getInstance();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -25,7 +32,25 @@ public class UpdateReminderFragment extends Fragment {
 
         EditText eTitle = (EditText) v.findViewById(R.id.edit_title_reminder);
         EditText eMoney = (EditText) v.findViewById(R.id.edit_money_reminder);
-        EditText eDate = (EditText) v.findViewById(R.id.edit_date_reminder);
+        eDate = v.findViewById(R.id.edit_date_reminder);
+
+        DatePickerDialog.OnDateSetListener date =new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int day) {
+                myCalendar.set(Calendar.YEAR, year);
+                myCalendar.set(Calendar.MONTH,month);
+                myCalendar.set(Calendar.DAY_OF_MONTH,day);
+                updateLabel();
+            }
+        };
+        eDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new DatePickerDialog(getContext(),date,myCalendar.get(Calendar.YEAR),
+                        myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+
         Button eSave = (Button) v.findViewById(R.id.btnSaveUpdate);
         Button eDelete = (Button) v.findViewById(R.id.btnRemindDelete);
 
@@ -69,5 +94,11 @@ public class UpdateReminderFragment extends Fragment {
         });
 
         return v;
+    }
+
+    private void updateLabel(){
+        String myFormat="dd-MM-yyyy";
+        SimpleDateFormat dateFormat=new SimpleDateFormat(myFormat);
+        eDate.setText(dateFormat.format(myCalendar.getTime()));
     }
 }

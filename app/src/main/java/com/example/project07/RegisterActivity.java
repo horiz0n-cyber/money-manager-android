@@ -5,24 +5,32 @@ import static com.example.project07.nhom4.ProcPass.HashPass;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.project07.model.AccModel;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
+
 public class RegisterActivity extends AppCompatActivity {
 
-    private TextView regName;
-    private TextView regPhone;
-    private TextView regDate;
-    private TextView regPass1;
-    private TextView regPass2;
+    private EditText regName;
+    private EditText regPhone;
+    private EditText regDate;
+    private EditText regPass1;
+    private EditText regPass2;
     private Button btnRegAcc;
     private Button btnBackLogin;
+    final Calendar myCalendar= Calendar.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +40,24 @@ public class RegisterActivity extends AppCompatActivity {
         regName = findViewById(R.id.regName);
         regPhone = findViewById(R.id.regPhone);
         regDate = findViewById(R.id.regDate);
+
+        DatePickerDialog.OnDateSetListener date =new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int day) {
+                myCalendar.set(Calendar.YEAR, year);
+                myCalendar.set(Calendar.MONTH,month);
+                myCalendar.set(Calendar.DAY_OF_MONTH,day);
+                updateLabel();
+            }
+        };
+        regDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new DatePickerDialog(RegisterActivity.this,date,myCalendar.get(Calendar.YEAR),
+                        myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+
         regPass1 = findViewById(R.id.regPass1);
         regPass2 = findViewById(R.id.regPass2);
         btnRegAcc = findViewById(R.id.btnRegAcc);
@@ -77,5 +103,10 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
+    }
+    private void updateLabel(){
+        String myFormat="dd-MM-yyyy";
+        SimpleDateFormat dateFormat=new SimpleDateFormat(myFormat);
+        regDate.setText(dateFormat.format(myCalendar.getTime()));
     }
 }
