@@ -42,17 +42,23 @@ public class ExpenseFragment extends Fragment implements IERecyclerViewAdapter.O
 
         ExpenseModel expenseModel = new ExpenseModel();
         String[] arr = getResources().getStringArray(R.array.listExpense);
+        System.out.println(arr);
+        System.out.println("dcm "+ID);
         int[] arrImg = {R.drawable.ic_utensils_solid, R.drawable.ic_heart_solid, R.drawable.ic_file_invoice_solid, R.drawable.ic_gas_pump_solid, R.drawable.ic_cart_shopping_solid__1_, R.drawable.ic_gamepad_solid};
         listExpense = new ArrayList<>();
         for (int i=0; i< arr.length; i++){
             listExpense.add(new IncomeExpense(arr[i], expenseModel.getAdvByCate(ID,i+1,v.getContext()), arrImg[i]));
         }
+        System.out.println(listExpense);
         //button add income
         Button addExpense = (Button) v.findViewById(R.id.add_expense);
         addExpense.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 AddExpenseFragment addExpenseFragment = new AddExpenseFragment();
+                Bundle bundle = new Bundle();
+                bundle.putInt("AccID", ID);
+                addExpenseFragment.setArguments(bundle);
                 FragmentManager manager = getActivity().getSupportFragmentManager();
                 manager.beginTransaction().replace(R.id.fragment_container, addExpenseFragment,
                         addExpenseFragment.getTag()).addToBackStack(null).commit();
@@ -82,6 +88,8 @@ public class ExpenseFragment extends Fragment implements IERecyclerViewAdapter.O
         bundle.putString("category", title);
         bundle.putInt("AccID", ID);
         bundle.putInt("Cate_id", position+1);
+
+        System.out.println("danh tesst"+ID);
 
         ExpenseDetailFragment expenseDetailFragment = new ExpenseDetailFragment();
         expenseDetailFragment.setArguments(bundle);

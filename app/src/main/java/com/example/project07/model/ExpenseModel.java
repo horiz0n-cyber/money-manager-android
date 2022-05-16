@@ -61,19 +61,19 @@ public class ExpenseModel {
         return listExpenseDetail;
 
     }
-//    public void MakeId(Context context){
-//        DbHandler dh = new DbHandler(context);
-//        SQLiteDatabase db = dh.getWritableDatabase();
-//        ContentValues values = new ContentValues();
-//        int ID =0;
-//        int AccID =1;
-//
-//        String dk = "id = '"+ID+"'";
-//        values.put(dh.OUT_ACC_ID, AccID);
-//        db.update(dh.TB_OUT,values,dk, null);
-//        db.close();
-//        dh.close();
-//    }
+    public void MakeId(Context context){
+        DbHandler dh = new DbHandler(context);
+        SQLiteDatabase db = dh.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        int ID =0;
+        int AccID =1;
+
+        String dk = "id = '"+ID+"'";
+        values.put(dh.OUT_ACC_ID, AccID);
+        db.update(dh.TB_OUT,values,dk, null);
+        db.close();
+        dh.close();
+    }
 
     public ExpenseClass getExpenseByInID(int out_id, Context context){
         DbHandler dh = new DbHandler(context);

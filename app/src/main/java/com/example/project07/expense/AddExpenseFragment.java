@@ -49,6 +49,7 @@ public class AddExpenseFragment extends Fragment {
         if(bundle != null){
             ID = bundle.getInt("AccID");
         }
+        System.out.println("danh "+ID);
         expenseMoney = v.findViewById(R.id.add_expense_money);
         expenseDate = v.findViewById(R.id.add_expense_date);
 
@@ -68,6 +69,8 @@ public class AddExpenseFragment extends Fragment {
                         myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
+
+        System.out.println("danh1 "+ID);
 
         expenseNote = v.findViewById(R.id.add_expense_note);
         btnAddExpenseSave = v.findViewById(R.id.btnadd_expense_save);

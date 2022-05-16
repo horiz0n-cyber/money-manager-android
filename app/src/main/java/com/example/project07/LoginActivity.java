@@ -47,6 +47,10 @@ public class LoginActivity extends AppCompatActivity {
                         int ID = accModel.getAccID(phone.getText().toString(), LoginActivity.this);
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         System.out.println("Id dang nhap" + ID);
+//                        IncomeModel incomeModel = new IncomeModel();
+//                        incomeModel.MakeId(LoginActivity.this);
+//                        ExpenseModel expenseModel = new ExpenseModel();
+//                        expenseModel.MakeId(LoginActivity.this);
                         intent.putExtra("AccId", ID);
                         startActivity(intent);
                     }

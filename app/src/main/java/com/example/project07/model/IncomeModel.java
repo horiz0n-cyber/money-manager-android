@@ -19,6 +19,7 @@ public class IncomeModel {
         DbHandler dh = new DbHandler(context);
         SQLiteDatabase db = dh.getWritableDatabase();
         ContentValues values = new ContentValues();
+        System.out.println("danh 2 "+incomeClass.getAccId());
 
         values.put(dh.IN_MONEY, incomeClass.getMoney());
         values.put(dh.IN_CATE_ID, incomeClass.getCate_id());
@@ -61,19 +62,19 @@ public class IncomeModel {
 
     }
 
-//    public void MakeId(Context context){
-//        DbHandler dh = new DbHandler(context);
-//        SQLiteDatabase db = dh.getWritableDatabase();
-//        ContentValues values = new ContentValues();
-//        int ID =0;
-//        int AccID =1;
-//
-//        String dk = "id = '"+ID+"'";
-//        values.put(dh.IN_ACC_ID, AccID);
-//        db.update(dh.TB_IN,values,dk, null);
-//        db.close();
-//        dh.close();
-//    }
+    public void MakeId(Context context){
+        DbHandler dh = new DbHandler(context);
+        SQLiteDatabase db = dh.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        int ID =0;
+        int AccID =1;
+
+        String dk = "id = '"+ID+"'";
+        values.put(dh.IN_ACC_ID, AccID);
+        db.update(dh.TB_IN,values,dk, null);
+        db.close();
+        dh.close();
+    }
 
     public IncomeClass getIncomeByInID(int in_id, Context context){
         DbHandler dh = new DbHandler(context);

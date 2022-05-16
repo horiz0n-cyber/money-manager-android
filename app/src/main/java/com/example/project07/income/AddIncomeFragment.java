@@ -25,7 +25,7 @@ import java.util.Calendar;
 
 public class AddIncomeFragment extends Fragment {
 
-    private int ID;
+    private int ID=-1;
     private TextView incomeMoney;
     private TextView incomeDate;
     private TextView incomeNote;
@@ -51,6 +51,7 @@ public class AddIncomeFragment extends Fragment {
         if(bundle != null){
             ID = bundle.getInt("AccID");
         }
+        System.out.println("danh " + ID);
         incomeMoney = v.findViewById(R.id.add_income_money);
         incomeDate = v.findViewById(R.id.add_income_date);
 
@@ -70,6 +71,8 @@ public class AddIncomeFragment extends Fragment {
                         myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
+
+        System.out.println("danh1 " + ID);
 
         incomeNote = v.findViewById(R.id.add_income_note);
         btnAddIncomeSave = v.findViewById(R.id.btnadd_income_save);

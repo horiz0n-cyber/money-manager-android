@@ -42,6 +42,13 @@ public class ExpenseDetailFragment extends Fragment implements IEDetailRecyclerV
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.fragment_expense_detail, container, false);
 
+        Bundle bundle = this.getArguments();
+        if(bundle != null){
+            cateTitle = bundle.getString("category");
+            ID = bundle.getInt("AccID");
+            cate_id = bundle.getInt("Cate_id");
+        }
+
         ExpenseModel expenseModel = new ExpenseModel();
         listExpenseDetail = expenseModel.getListExpenseDetail(ID, cate_id, v.getContext());
 
@@ -50,6 +57,9 @@ public class ExpenseDetailFragment extends Fragment implements IEDetailRecyclerV
             @Override
             public void onClick(View view) {
                 AddExpenseFragment addExpenseFragment = new AddExpenseFragment();
+                Bundle bundle = new Bundle();
+                bundle.putInt("AccID", ID);
+                addExpenseFragment.setArguments(bundle);
                 FragmentManager manager = getActivity().getSupportFragmentManager();
                 manager.beginTransaction().replace(R.id.fragment_container, addExpenseFragment,
                         addExpenseFragment.getTag()).addToBackStack(null).commit();
@@ -71,12 +81,7 @@ public class ExpenseDetailFragment extends Fragment implements IEDetailRecyclerV
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //bind data for recycler view
-        Bundle bundle = this.getArguments();
-        if(bundle != null){
-            cateTitle = bundle.getString("category");
-            ID = bundle.getInt("AccID");
-            cate_id = bundle.getInt("Cate_id");
-        }
+        System.out.println();
     }
 
     @Override

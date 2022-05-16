@@ -39,6 +39,13 @@ public class IncomeDetailFragment extends Fragment implements IEDetailRecyclerVi
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.fragment_income_detail, container, false);
 
+        Bundle bundle = this.getArguments();
+        if(bundle != null){
+            cateTitle = bundle.getString("category");
+            ID = bundle.getInt("AccID");
+            cate_id = bundle.getInt("Cate_id");
+        }
+
         IncomeModel inComeModel = new IncomeModel();
         listIncomeDetail = inComeModel.getListIncomeDetail(ID, cate_id, v.getContext());
 
@@ -48,6 +55,9 @@ public class IncomeDetailFragment extends Fragment implements IEDetailRecyclerVi
             @Override
             public void onClick(View view) {
                 AddIncomeFragment addIncomeFragment = new AddIncomeFragment();
+                Bundle bundle = new Bundle();
+                bundle.putInt("AccID", ID);
+                addIncomeFragment.setArguments(bundle);
                 FragmentManager manager = getActivity().getSupportFragmentManager();
                 manager.beginTransaction().replace(R.id.fragment_container, addIncomeFragment,
                         addIncomeFragment.getTag()).addToBackStack(null).commit();
@@ -71,12 +81,6 @@ public class IncomeDetailFragment extends Fragment implements IEDetailRecyclerVi
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //get data
-        Bundle bundle = this.getArguments();
-        if(bundle != null){
-            cateTitle = bundle.getString("category");
-            ID = bundle.getInt("AccID");
-            cate_id = bundle.getInt("Cate_id");
-        }
     }
 
     @Override
