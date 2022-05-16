@@ -13,11 +13,11 @@
             android:title="Nhắc nhở" />
         <item
             android:id="@+id/nav_income"
-            android:icon="@drawable/ic_chart_pie_solid"
+            android:icon="@drawable/ic_cash_money_business_growth_saving_currency_profit_svgrepo_com"
             android:title="Theo dõi thu" />
         <item
             android:id="@+id/nav_expense"
-            android:icon="@drawable/ic_chart_pie_solid"
+            android:icon="@drawable/ic_credit_card_payment_svgrepo_com"
             android:title="Theo dõi chi" />
     </group>
 

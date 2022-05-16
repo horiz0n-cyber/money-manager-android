@@ -1,5 +1,6 @@
 package com.example.project07.income;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.telecom.ConnectionService;
 import android.view.LayoutInflater;
@@ -7,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -19,6 +21,9 @@ import com.example.project07.R;
 import com.example.project07.model.AccModel;
 import com.example.project07.model.IncomeModel;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class UpdateIncomeFragment extends Fragment {
 
     private int incomeID;
@@ -26,6 +31,7 @@ public class UpdateIncomeFragment extends Fragment {
     private TextView editIncomeMoney;
     private TextView editIncomeDate;
     private TextView editIncomeNote;
+    final Calendar myCalendar= Calendar.getInstance();
 
     public UpdateIncomeFragment() {
     }
@@ -53,6 +59,24 @@ public class UpdateIncomeFragment extends Fragment {
         //text
         editIncomeMoney = v.findViewById(R.id.edit_income_money);
         editIncomeDate = v.findViewById(R.id.edit_income_date);
+
+        DatePickerDialog.OnDateSetListener date =new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int day) {
+                myCalendar.set(Calendar.YEAR, year);
+                myCalendar.set(Calendar.MONTH,month);
+                myCalendar.set(Calendar.DAY_OF_MONTH,day);
+                updateLabel();
+            }
+        };
+        editIncomeDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new DatePickerDialog(getContext(),date,myCalendar.get(Calendar.YEAR),
+                        myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+
         editIncomeNote = v.findViewById(R.id.edit_income_note);
 
         //Button save
@@ -92,5 +116,11 @@ public class UpdateIncomeFragment extends Fragment {
         });
 
         return v;
+    }
+
+    private void updateLabel(){
+        String myFormat="dd-MM-yyyy";
+        SimpleDateFormat dateFormat=new SimpleDateFormat(myFormat);
+        editIncomeDate.setText(dateFormat.format(myCalendar.getTime()));
     }
 }

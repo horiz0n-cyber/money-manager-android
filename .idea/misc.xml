@@ -51,7 +51,9 @@
         <entry key="..\:/AndroidSt/Project07/app/src/main/res/layout/reminder_row.xml" value="0.25" />
         <entry key="..\:/AndroidSt/Project07/app/src/main/res/menu/drawer_menu.xml" value="0.2" />
         <entry key="..\:/AndroidSt/Project07/app/src/main/res/menu/navigation_menu.xml" value="0.2" />
+        <entry key="..\:/AndroidSt/projectandroid07/app/src/main/res/drawable/ic_credit_card_payment_svgrepo_com.xml" value="0.2115" />
         <entry key="..\:/AndroidSt/projectandroid07/app/src/main/res/drawable/ic_phone_solid.xml" value="0.2115" />
+        <entry key="..\:/AndroidSt/projectandroid07/app/src/main/res/drawable/ic_profit_svgrepo_com.xml" value="0.2115" />
         <entry key="..\:/AndroidSt/projectandroid07/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/AndroidSt/projectandroid07/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/AndroidSt/projectandroid07/app/src/main/res/layout/activity_register.xml" value="0.17074275362318841" />
@@ -69,7 +71,7 @@
         <entry key="..\:/AndroidSt/projectandroid07/app/src/main/res/layout/reminder_row.xml" value="0.16394927536231885" />
         <entry key="..\:/AndroidSt/projectandroid07/app/src/main/res/layout/spiner_item_cus.xml" value="0.16666666666666666" />
         <entry key="..\:/AndroidSt/projectandroid07/app/src/main/res/layout/spinner_dropdown_item.xml" value="0.16666666666666666" />
-        <entry key="..\:/AndroidSt/projectandroid07/app/src/main/res/menu/drawer_menu.xml" value="0.22" />
+        <entry key="..\:/AndroidSt/projectandroid07/app/src/main/res/menu/drawer_menu.xml" value="0.67" />
         <entry key="..\:/Users/danh2/AndroidStudioProjects/MAD_lan1/app/src/main/res/drawable/ic_briefcase_solid.xml" value="0.1" />
         <entry key="..\:/Users/danh2/AndroidStudioProjects/MAD_lan1/app/src/main/res/layout/activity_update.xml" value="0.1171875" />
         <entry key="..\:/Users/danh2/AndroidStudioProjects/MAD_lan1/app/src/main/res/layout/fragment_change_password.xml" value="0.1" />
@@ -77,8 +79,6 @@
         <entry key="..\:/Users/danh2/AndroidStudioProjects/MAD_lan1/app/src/main/res/layout/fragment_create_income.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/danh2/AndroidStudioProjects/MAD_lan1/app/src/main/res/layout/fragment_income.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/danh2/AndroidStudioProjects/MAD_lan1/app/src/main/res/layout/fragment_profile.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/danh2/AndroidStudioProjects/MAD_lan1/app/src/main/res/layout/fragment_update_expense.xml" value="0.1" />
-        <entry key="..\:/Users/danh2/AndroidStudioProjects/MAD_lan1/app/src/main/res/layout/fragment_update_income.xml" value="0.1" />
         <entry key="..\:/Users/danh2/AndroidStudioProjects/MAD_lan1/app/src/main/res/layout/fragment_update_reminder.xml" value="0.1" />
         <entry key="..\:/Users/danh2/AndroidStudioProjects/MAD_lan1/app/src/main/res/layout/ie_detail_row.xml" value="0.1" />
         <entry key="..\:/Users/danh2/AndroidStudioProjects/MAD_lan1/app/src/main/res/layout/ie_row.xml" value="0.1" />

@@ -1,11 +1,13 @@
 package com.example.project07.expense;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -20,12 +22,16 @@ import com.example.project07.income.IncomeFragment;
 import com.example.project07.model.ExpenseModel;
 import com.example.project07.model.IncomeModel;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class UpdateExpenseFragment extends Fragment {
     private int expenseID;
     private int ID;
     private TextView editExpenseMoney;
     private TextView editExpenseDate;
     private TextView editExpenseNote;
+    final Calendar myCalendar= Calendar.getInstance();
 
     public UpdateExpenseFragment() {
     }
@@ -51,6 +57,24 @@ public class UpdateExpenseFragment extends Fragment {
         spinner.setAdapter(adapter);
         editExpenseMoney = v.findViewById(R.id.edit_expense_money);
         editExpenseDate = v.findViewById(R.id.edit_expense_date);
+
+        DatePickerDialog.OnDateSetListener date =new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int day) {
+                myCalendar.set(Calendar.YEAR, year);
+                myCalendar.set(Calendar.MONTH,month);
+                myCalendar.set(Calendar.DAY_OF_MONTH,day);
+                updateLabel();
+            }
+        };
+        editExpenseDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new DatePickerDialog(getContext(),date,myCalendar.get(Calendar.YEAR),
+                        myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+
         editExpenseNote = v.findViewById(R.id.edit_expense_note);
 
         //Button save
@@ -90,5 +114,11 @@ public class UpdateExpenseFragment extends Fragment {
         });
 
         return v;
+    }
+
+    private void updateLabel(){
+        String myFormat="dd-MM-yyyy";
+        SimpleDateFormat dateFormat=new SimpleDateFormat(myFormat);
+        editExpenseDate.setText(dateFormat.format(myCalendar.getTime()));
     }
 }
