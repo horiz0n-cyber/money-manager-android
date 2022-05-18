@@ -1,13 +1,21 @@
 package com.example.project07.reminder;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,12 +24,16 @@ import android.widget.Button;
 import com.example.project07.R;
 import com.example.project07.model.RemindModel;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Date;
 
 public class ReminderFragment extends Fragment {
 
     View v;
+
+    Button test;
+
     private RecyclerView myRecyclerView;
     ArrayList<RemindClass> listReminder;
     private int ID;
@@ -67,7 +79,6 @@ public class ReminderFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
 
     }
 }

@@ -3,6 +3,7 @@
     package="com.example.project07">
 
     <application
+        android:name=".reminder.MyAplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -30,6 +31,7 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+        <receiver android:name=".reminder.ReminderBroadcast"/>
     </application>
 
 </manifest>

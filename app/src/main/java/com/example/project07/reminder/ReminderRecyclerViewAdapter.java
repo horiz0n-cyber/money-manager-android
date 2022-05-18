@@ -1,5 +1,6 @@
 package com.example.project07.reminder;
 
+import android.app.Notification;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -124,4 +125,5 @@ public class ReminderRecyclerViewAdapter extends RecyclerView.Adapter<ReminderRe
         }
         return money;
     }
+
 }
