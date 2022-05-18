@@ -55,15 +55,17 @@
         <entry key="..\:/AndroidSt/projectandroid07/app/src/main/res/drawable/ic_money_pay_svgrepo_com.xml" value="0.2115" />
         <entry key="..\:/AndroidSt/projectandroid07/app/src/main/res/drawable/ic_pay.xml" value="0.2115" />
         <entry key="..\:/AndroidSt/projectandroid07/app/src/main/res/drawable/ic_phone_solid.xml" value="0.2115" />
+        <entry key="..\:/AndroidSt/projectandroid07/app/src/main/res/drawable/ic_piggy_bank_save_svgrepo_com.xml" value="0.1" />
         <entry key="..\:/AndroidSt/projectandroid07/app/src/main/res/drawable/ic_profit_svgrepo_com.xml" value="0.2115" />
-        <entry key="..\:/AndroidSt/projectandroid07/app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="..\:/AndroidSt/projectandroid07/app/src/main/res/drawable/ic_saving_money_money_save_savings_svgrepo_com.xml" value="0.1" />
+        <entry key="..\:/AndroidSt/projectandroid07/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/AndroidSt/projectandroid07/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/AndroidSt/projectandroid07/app/src/main/res/layout/activity_register.xml" value="0.17074275362318841" />
+        <entry key="..\:/AndroidSt/projectandroid07/app/src/main/res/layout/activity_register.xml" value="0.2" />
         <entry key="..\:/AndroidSt/projectandroid07/app/src/main/res/layout/activity_update.xml" value="0.1" />
         <entry key="..\:/AndroidSt/projectandroid07/app/src/main/res/layout/fragment_change_password.xml" value="0.33" />
         <entry key="..\:/AndroidSt/projectandroid07/app/src/main/res/layout/fragment_create_exepense.xml" value="0.22" />
         <entry key="..\:/AndroidSt/projectandroid07/app/src/main/res/layout/fragment_create_income.xml" value="0.22" />
-        <entry key="..\:/AndroidSt/projectandroid07/app/src/main/res/layout/fragment_create_reminder.xml" value="0.16666666666666666" />
+        <entry key="..\:/AndroidSt/projectandroid07/app/src/main/res/layout/fragment_create_reminder.xml" value="0.25" />
         <entry key="..\:/AndroidSt/projectandroid07/app/src/main/res/layout/fragment_profile.xml" value="0.22" />
         <entry key="..\:/AndroidSt/projectandroid07/app/src/main/res/layout/fragment_reminder.xml" value="0.1585144927536232" />
         <entry key="..\:/AndroidSt/projectandroid07/app/src/main/res/layout/fragment_update_expense.xml" value="0.21" />
